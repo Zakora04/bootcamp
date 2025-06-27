@@ -114,11 +114,9 @@
   .lefthero{
     width:100%
   }
-  .righthero{
-     width:100%
-  }
-}
-/*.secondhero {
+  
+};
+.secondhero {
   width: 100%;
   height: 100px;
   background-color: rgb(245, 245, 245);
@@ -132,7 +130,7 @@
   align-items: center;
   color: #003c46;
  }
-/*
+
 .texts {
   width: 30%;
   height: 100px;
@@ -366,4 +364,4 @@
   justify-content: space-between;
   align-items: center;
   background-color: white;
-} */
+} 
