@@ -2,7 +2,7 @@ function signin() {
   const username = document.getElementById("signup").value;
   const password = document.getElementById("signupPass").value;
   const reapeatPassword = document.getElementById("pass").value;
-  const emailaddress = document.getElementById("mail").value;
+  const emailaddress = document.getElementById("email").value;
 
   // if (emailaddress.includes("@") && emailaddress.includes("."))
   //   alert("Successful");
@@ -10,10 +10,7 @@ function signin() {
   //   return "@required";
   // }
   if (
-    username === "" ||
-    password === "" ||
-    reapeatPassword === "" ||
-    emailaddress === ""
+    username === "" || password === "" || reapeatPassword === "" ||emailaddress === ""
   ) {
     alert("Please fill all field");
     return;
@@ -24,7 +21,7 @@ function signin() {
     reapeatPassword: reapeatPassword,
     emailaddress: emailaddress,
   };
-  localStorage.setItem("user", JSON.stringify(userData));
+  localStorage.setItem("userData", JSON.stringify(userData));
   alert("Sign up sucessfully");
 
   setTimeout(() => {
