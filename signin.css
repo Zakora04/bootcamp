@@ -14,16 +14,16 @@
   display: flex;
   justify-content: space-between;
 }
-.lefthero{
+.lefthero {
   width: 45%;
   height: 100%;
   line-height: 25px;
   /* background-color: rgb(123, 29, 111); */
   /* margin-top: 50px;  */
 }
-.lefthero img{
-  width:100%;
-  height:100%;
+.lefthero img {
+  width: 100%;
+  height: 100%;
 }
 .righthero {
   width: 45%;
