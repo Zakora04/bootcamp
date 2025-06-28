@@ -82,5 +82,7 @@
   font-weight: 500;
   color: #003c46;
   font-family: sans-serif;
-  margin-left: 140px;
+  /* margin-left: 100px; */
+  text-align: center;
+  text-decoration: no;
 }

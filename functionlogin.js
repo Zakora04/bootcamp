@@ -1,7 +1,7 @@
 function Login() {
   const username = document.getElementById("loginUser").value;
   const password = document.getElementById("loginPass").value;
-
+  
   const savedTolocal = JSON.parse(localStorage.getItem("user"));
 
   if (
