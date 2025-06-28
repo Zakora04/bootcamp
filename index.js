@@ -4,6 +4,11 @@ function signin() {
   const reapeatPassword = document.getElementById("pass").value;
   const emailaddress = document.getElementById("mail").value;
 
+  if (emailaddress.includes("@") && emailaddress.includes("."))
+    alert("Successful");
+  else {
+    return "@required";
+  }
   if (
     username === "" ||
     password === "" ||
