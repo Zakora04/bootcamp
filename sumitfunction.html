@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Submit Exam Grade</title>
+  </head>
+  <body>
+    <h1>Submit Exam Grade</h1>
+    <form id="gradeForm">
+      <!-- <label for="student">Student Name:</label><br />
+      <input type="text" id="student" name="student" required /><br /><br />
+
+      <label for="grade">Grade:</label><br />
+      <input type="text" id="grade" name="grade" required /><br /><br /> -->
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("gradeForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const student = document.getElementById("student").value.trim();
+          const grade = document.getElementById("grade").value.trim();
+
+          // Load existing grades from localStorage
+          let grades = JSON.parse(localStorage.getItem("grades")) || [];
+
+          // Add new grade
+          grades.push({ student, grade });
+
+          // Save back to localStorage
+          localStorage.setItem("grades", JSON.stringify(grades));
+
+          // Optionally redirect to the display page
+          window.location.href = "teacher.html";
+        });
+    </script>
+  </body>
+</html>

@@ -11,44 +11,68 @@
     <div class="boxes">
       <div class="box">
         <h4>Surname</h4>
-        <input type="text" placeholder="Username" id="signup" />
+        <input type="text" placeholder="Godwin" id="signup" />
       </div>
       <div class="box">
-        <h4>Surname</h4>
-        <input type="text" placeholder="Username" id="signup" />
+        <h4>Name</h4>
+        <input type="text" placeholder="Favour" id="signup" />
       </div>
       <div class="box">
-        <h4>Surname</h4>
-        <input type="text" placeholder="Username" id="signup" />
+        <h4>Class</h4>
+        <input type="text" placeholder="SS1" id="signup" />
       </div>
     </div>
     <div class="mainhero">
-        <div class="lefthero">
-            <h4>Subjects</h4>
-            <input type="text" placeholder="Username" id="signup" />
-            <input type="text" placeholder="Username" id="signup" />
-            <input type="text" placeholder="Username" id="signup" />
-            <input type="text" placeholder="Username" id="signup" />
-            <input type="text" placeholder="Username" id="signup" />
-            <input type="text" placeholder="Username" id="signup" />
+      <div class="lefthero">
+        <h4>Subjects</h4>
+        <input type="text" placeholder="Mathematics" id="signup" />
+        <input type="text" placeholder="English" id="signup" />
+        <input type="text" placeholder="Biology" id="signup" />
+        <input type="text" placeholder="Chemistry" id="signup" />
+        <input type="text" placeholder="Physics" id="signup" />
+        <input type="text" placeholder="Geography" id="signup" />
+      </div>
+      <div class="righthero">
+        <h4>Grades</h4>
+        <input type="text" placeholder="A" id="signup" />
+        <input type="text" placeholder="B" id="signup" />
+        <input type="text" placeholder="C" id="signup" />
+        <input type="text" placeholder="D" id="signup" />
+        <input type="text" placeholder="E" id="signup" />
+        <input type="text" placeholder="F" id="signup" />
+        <div class="btns">
+          <button class="one" onclick="submit()">
+            Submit
+            <script>
+              document
+                .getElementById("gradeForm")
+                .addEventListener("submit", function (e) {
+                  e.preventDefault();
+
+                  const student = document
+                    .getElementById("student")
+                    .value.trim();
+                  const grade = document.getElementById("grade").value.trim();
+
+                  // Load existing grades from localStorage
+                  let grades = JSON.parse(localStorage.getItem("grades")) || [];
+
+                  // Add new grade
+                  grades.push({ student, grade });
+
+                  // Save back to localStorage
+                  localStorage.setItem("grades", JSON.stringify(grades));
+
+                  // Optionally redirect to the display page
+                  window.location.href = "teacher.html";
+                });
+            </script>
+          </button>
+          <a href="./teachertwo.html"
+            ><button class="one" onclick="check()">Check reports</button></a
+          >
         </div>
-        <div class="righthero">
-            <h4>Grades</h4>
-            <input type="text" placeholder="Username" id="signup" />
-            <input type="text" placeholder="Username" id="signup" />
-            <input type="text" placeholder="Username" id="signup" />
-            <input type="text" placeholder="Username" id="signup" />
-            <input type="text" placeholder="Username" id="signup" />
-            <input type="text" placeholder="Username" id="signup" />
-            <div class="btns">
-              <button class="one" onclick="submit()">submit</button>
-             <a href="./teachertwo.html"><button class="one" onclick="check()">Check reports</button></a> 
-          </div>
-          </div>
-        <!-- <div class="btns">
-        <button class="one" onclick="submit()">submit</button>
-        <button class="one" onclick="check()">Check reports</button>
-    </div> -->
+      </div>
     </div>
   </body>
 </html>

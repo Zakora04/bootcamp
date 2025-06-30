@@ -7,8 +7,36 @@
   height: 100vh;
   background-color: white;
 }
-h1{
-    text-align: center;
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("./WhatsApp\ Image\ 2025-06-29\ at\ 12.13.41_1eebbb56.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+}
+.hero::before{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0,0, 0.5);
+  z-index: 0;
+}
+.hero>*{
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  text-align: center;
 }
 table {
   width: 60%;
@@ -16,15 +44,29 @@ table {
   margin: 20px auto;
 }
 th,
-td {
-  border: 1px solid #999;
-  padding:20px;
+td {      
+  border: 3px solid #999;
+  padding: 20px;
   text-align: left;
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+  font-family: sans-serif;
 }
 th {
-  background-color: #f2f2f2;
+background-color: rgba(0, 0, 0, 0.484);
 }
 tr:hover {
-  background-color: #e6f7ff; 
+  background-color: #e6f7ff;
   cursor: pointer;
 }
+/* @media (max-width:425px) {
+  .hero{
+    width:100%;
+    height:100vh;
+  }
+  .table{
+    width:40%;
+    margin: 0px auto;
+  }
+} */
