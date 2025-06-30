@@ -4,23 +4,23 @@ function Login() {
   
   const savedTolocal = JSON.parse(localStorage.getItem("userData"));
   if(!username.trim() || !password.trim()){
-    return alert("Input filed  required")
+    return alert("Input field required>")
   }
   if(!savedTolocal){
-    return alert("login failed");
+    return alert("Login failed>");
   }
   if (
     savedTolocal && username === savedTolocal.username && password === savedTolocal.password) {
-    alert("login sucessful");
+    alert("Login successful.");
   } 
   else if (username !== savedTolocal.username) {
-    alert("incorrect userName");
+    alert("Incorrect Username.");
   } else if (password !== savedTolocal.password) {
-    alert("incorrect password");
+    alert("Incorrect password.");
   } else if (!savedTolocal) {
-    alert("incorrect credential");
+    alert("Incorrect credential.");
   } 
   else {
-    alert("login successful");
+    alert("Login successful.");
   }
 }
