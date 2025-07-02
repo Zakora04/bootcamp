@@ -34,7 +34,7 @@
   line-height: 40px;
 }
 .box input {
-  width: 70%;
+  width: 80%;
   border-radius: 20px;
   border: 1px solid #003c46;
   padding: 20px;
@@ -49,7 +49,7 @@
   /* flex-direction: column;  */
 }
 .lefthero {
-  width: 48%;
+  width: 50%;
   height: 80%;
   /* background-color: blueviolet; */
   display: flex;
@@ -70,7 +70,7 @@
   margin: 5px;
 }
 .righthero {
-  width: 48%;
+  width: 50%;
   height: 80%;
   /* background-color: blueviolet; */
   display: flex;

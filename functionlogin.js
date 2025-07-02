@@ -1,26 +1,28 @@
-function Login() {
-  const username = document.getElementById("loginUser").value;
+function login() {
+  const username = document.getElementById("loginUser").value.trim();
   const password = document.getElementById("loginPass").value;
-  
-  const savedTolocal = JSON.parse(localStorage.getItem("userData"));
-  if(!username.trim() || !password.trim()){
-    return alert("Input field required>")
+
+  const savedTolocalStorage = JSON.parse(localStorage.getItem("userData"));
+  if (!username.trim()) {
+    // console.error("Failed to parse stored user data:", e);
+    // return alert("Login failed. Please sign up first.");
   }
-  if(!savedTolocal){
-    return alert("Login failed>");
+
+  if (!username || !password) {
+    return alert("Both username and password are required.");
   }
-  if (
-    savedTolocal && username === savedTolocal.username && password === savedTolocal.password) {
-    alert("Login successful.");
-  } 
-  else if (username !== savedTolocal.username) {
-    alert("Incorrect Username.");
-  } else if (password !== savedTolocal.password) {
-    alert("Incorrect password.");
-  } else if (!savedTolocal) {
-    alert("Incorrect credential.");
-  } 
-  else {
-    alert("Login successful.");
+
+  if (!username || !password) {
+    return alert("No account found. Please sign up first.");
   }
+
+  if (username !== savedTolocalStorage.username) {
+    return alert("Incorrect username.");
+  }
+  if (password !== savedTolocalStorage.password) {
+    return alert("Incorrect password.");
+  }
+
+  alert("Login successful.");
 }
+document.querySelector("button").addEventListener("click", Login);

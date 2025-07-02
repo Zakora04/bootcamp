@@ -1,28 +1,25 @@
 function signin() {
-  const username = document.getElementById("signup").value;
+  const username = document.getElementById("signup").value.trim();
   const password = document.getElementById("signupPass").value;
-  const reapeatPassword = document.getElementById("pass").value;
-  const emailaddress = document.getElementById("email").value;
+  const repeatPassword = document.getElementById("pass").value;
+  const email = document.getElementById("email").value.trim();
 
-  if (
-    !username === "" ||
-    !password === "" ||
-    !reapeatPassword === "" ||
-    !emailaddress === ""
-  ) {
-    alert("Please fill all field");
+  if (!username || !password || !repeatPassword || !email) {
+    alert("Please fill all fields");
     return;
   }
-  const userData = {
-    username: username,
-    password: password,
-    reapeatPassword: reapeatPassword,
-    emailaddress: emailaddress,
-  };
+
+  if (password !== repeatPassword) {
+    alert("Passwords do not match");
+    return;
+  }
+
+  const userData = { username, password, email };
+
   localStorage.setItem("userData", JSON.stringify(userData));
-  alert("Sign up sucessfully");
+  alert("Sign up successful!");
 
   setTimeout(() => {
     window.location.href = "login.html";
-  });
+  }, 500);
 }
